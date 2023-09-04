@@ -464,14 +464,14 @@ const path = __nccwpck_require__(17);
 const core = __nccwpck_require__(186);
 
 try {
-  const fileName = core.getInput('filename', { required: true });
+  const json = core.getInput('json', { required: true });
   const prefix = core.getInput('prefix') || '';
   const masked = (core.getInput('masked') || 'false') === 'true';
 
-  const fullPath = path.resolve(fileName);
+  const fullPath = path.resolve(json);
   core.info(`Processing file: ${fullPath}`);
 
-  const rawdata = fs.readFileSync(fullPath);
+  const rawdata = fs.existsSync(json) ? fs.readFileSync(json) : json;
   const rootObj = JSON.parse(rawdata);
 
   const processVariable = (variable, name) => {
