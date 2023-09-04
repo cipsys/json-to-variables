@@ -5,13 +5,13 @@ branding:
   icon: 'lock'
   color: 'red'
 inputs:
-  filename: 
+  filename:
     description: 'The json file.'
     required: true
   prefix:
     description: 'The prefix for variables.'
     required: false
-    default: 'json'
+    default: ''
   masked:
     description: 'Mask variables as secrets.'
     required: false
