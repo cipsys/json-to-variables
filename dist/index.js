@@ -465,7 +465,7 @@ const core = __nccwpck_require__(186);
 
 try {
   const fileName = core.getInput('filename', { required: true });
-  const prefix = core.getInput('prefix') || 'json';
+  const prefix = core.getInput('prefix') || '';
   const masked = (core.getInput('masked') || 'false') === 'true';
 
   const fullPath = path.resolve(fileName);
