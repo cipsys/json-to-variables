@@ -497,6 +497,7 @@ try {
     }
   };
 
+  core.info(`PREFIX: ${prefix}`);
   processVariable(rootObj, prefix);
 } catch (error) {
   core.setFailed(error.message);
